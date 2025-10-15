@@ -1,35 +1,13 @@
-// Importa tu widget desde Framer (ya compilado)
-import Chat_widget from "https://framer.com/m/Chat-widget-BXta.js@sFdHTLPKtTUWrctMXXMn";
+// Importa tu widget directamente desde Framer
+import Chat_widget from "https://framer.com/m/Chat-widget-BXta.js@sFdHTLPKtTUWrctMXXMn"
 
-// Espera a que el DOM esté listo
-window.addEventListener("DOMContentLoaded", async () => {
-  const root = document.getElementById("chat-widget-root") || document.body;
+// Importa React y el método createRoot desde un CDN compatible
+import React from "https://esm.sh/react@18"
+import { createRoot } from "https://esm.sh/react-dom@18/client"
 
-  // Verificamos si el módulo cargó
-  const status = document.createElement("p");
-  status.style.textAlign = "center";
-  status.style.marginTop = "40px";
-  status.style.color = "#666";
+// Busca el div donde se debe montar el chat
+const container = document.getElementById("chat-widget-root")
 
-  try {
-    if (typeof Chat_widget === "function") {
-      status.innerText = "✅ Widget detectado. Iniciando...";
-      root.appendChild(status);
-
-      Chat_widget({
-        backendUrl: "https://alex-backend.vercel.app",
-        accentColor: "#3B82F6",
-        position: "bottom-right",
-        fontFamily: "Inter, sans-serif",
-        backgroundColor: "#FAFAFA",
-        borderRadius: 20,
-      });
-    } else {
-      status.innerText = "❌ El widget no se pudo importar desde Framer.";
-      root.appendChild(status);
-    }
-  } catch (err) {
-    status.innerText = "💥 Error al iniciar el widget: " + err.message;
-    root.appendChild(status);
-  }
-});
+// Crea el “root” de React y monta el componente del widget
+const root = createRoot(container)
+root.render(React.createElement(Chat_widget))
