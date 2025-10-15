@@ -1,11 +1,11 @@
-// ✅ React 18 desde esm.sh (funciona en Vercel y navegadores modernos)
-import * as React from "https://esm.sh/react@18.2.0"
-import * as ReactDOMClient from "https://esm.sh/react-dom@18.2.0/client"
+// ✅ Importa React y ReactDOM desde JSPM (resuelve jsx-runtime)
+import * as React from "https://ga.jspm.io/npm:react@18.2.0/index.js"
+import * as ReactDOMClient from "https://ga.jspm.io/npm:react-dom@18.2.0/client.js"
 
-// ✅ Tu componente del widget en Framer
+// ✅ Importa tu widget de Framer
 import Chat_widget from "https://framer.com/m/Chat-widget-BXta.js@sFdHTLPKtTUWrctMXXMn"
 
-// ✅ Espera que cargue el DOM y monta el componente
+// ✅ Monta el widget una vez cargado el DOM
 window.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("chat-widget-root")
   if (!rootElement) {
