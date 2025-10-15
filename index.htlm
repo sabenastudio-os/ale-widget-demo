@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo – Alex Chat Widget</title>
+</head>
+<body style="background:#f8f9fb; font-family:Inter, sans-serif; height:100vh;">
+  <h2 style="text-align:center; margin-top:60px; color:#333;">
+    Demo del Asistente Alex – Sabena Studio
+  </h2>
+
+  <!-- Llamamos a tu módulo de Framer -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
