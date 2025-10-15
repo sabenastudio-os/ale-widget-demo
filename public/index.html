@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo del Asistente Ale – Sabena Studio</title>
-</head>
-<body style="background:#f8f9fb; font-family:Inter, sans-serif; height:100vh; margin:0; padding:0;">
-  <h2 style="text-align:center; margin-top:60px; color:#333;">Demo del Asistente Ale – Sabena Studio</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Demo del Asistente Ale – Sabena Studio</title>
+    <style>
+      body {
+        background: #f8f9fb;
+        font-family: Inter, sans-serif;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      h2 {
+        text-align: center;
+        margin-top: 60px;
+        color: #333;
+      }
+    </style>
+  </head>
 
-  <!-- Contenedor donde se montará el widget -->
-  <div id="chat-widget-root"></div>
+  <body>
+    <h2>Demo del Asistente Ale – Sabena Studio</h2>
 
-  <!-- Carga el script del widget -->
-  <script type="module" src="/main.js"></script>
-</body>
+    <!-- Aquí se montará el widget -->
+    <div id="chat-widget-root"></div>
+
+    <!-- Carga React y ReactDOM globalmente -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Importa tu widget desde Framer y lo monta -->
+    <script type="module">
+      import Chat_widget from "https://framer.com/m/Chat-widget-BXta.js@sFdHTLPKtTUWrctMXXMn";
+      const root = ReactDOM.createRoot(document.getElementById("chat-widget-root"));
+      root.render(React.createElement(Chat_widget));
+    </script>
+  </body>
 </html>
