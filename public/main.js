@@ -1,11 +1,11 @@
-// 1️⃣ Importa React y ReactDOM desde un CDN compatible
-import * as React from "https://cdn.skypack.dev/react@18.2.0"
-import * as ReactDOMClient from "https://cdn.skypack.dev/react-dom@18.2.0/client"
+// ✅ React 18 desde esm.sh (funciona en Vercel y navegadores modernos)
+import * as React from "https://esm.sh/react@18.2.0"
+import * as ReactDOMClient from "https://esm.sh/react-dom@18.2.0/client"
 
-// 2️⃣ Importa el componente del widget desde Framer
+// ✅ Tu componente del widget en Framer
 import Chat_widget from "https://framer.com/m/Chat-widget-BXta.js@sFdHTLPKtTUWrctMXXMn"
 
-// 3️⃣ Espera a que el DOM esté cargado antes de montarlo
+// ✅ Espera que cargue el DOM y monta el componente
 window.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.getElementById("chat-widget-root")
   if (!rootElement) {
@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
     return
   }
 
-  // 4️⃣ Monta el componente en el div
   const root = ReactDOMClient.createRoot(rootElement)
   root.render(React.createElement(Chat_widget))
 })
