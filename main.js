@@ -1,16 +1,22 @@
-// Importamos tu widget de Framer (ya compilado)
+// Importa tu widget desde Framer (la versión compilada)
 import Chat_widget from "https://framer.com/m/Chat-widget-BXta.js@sFdHTLPKtTUWrctMXXMn";
 
-// Creamos el contenedor donde se insertará el chat
-const widgetContainer = document.createElement("div");
-widgetContainer.style.position = "fixed";
-widgetContainer.style.bottom = "20px";
-widgetContainer.style.right = "20px";
-document.body.appendChild(widgetContainer);
+// Espera a que el DOM cargue antes de montar el widget
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ Cargando widget...");
 
-// Iniciamos el widget
-Chat_widget({
-  backendUrl: "https://alex-backend.vercel.app", // tu backend real
-  accentColor: "#3B82F6",
-  position: "bottom-right",
+  // Crea un contenedor si no existe
+  const root = document.getElementById("chat-widget-root") || document.body;
+
+  // Inicializa el widget con tus parámetros
+  Chat_widget({
+    backendUrl: "https://alex-backend.vercel.app", // tu backend real
+    accentColor: "#3B82F6",
+    position: "bottom-right",
+    fontFamily: "Inter, sans-serif",
+    backgroundColor: "#FAFAFA",
+    borderRadius: 20,
+  });
+
+  console.log("💬 Widget insertado correctamente.");
 });
